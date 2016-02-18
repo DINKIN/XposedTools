@@ -188,5 +188,11 @@ if [ "$API" -ge "22" ]; then
   find /system /vendor -type f -name '*.odex.gz' 2>/dev/null | while read f; do mv "$f" "$f.xposed"; done
 fi
 
+mount /data >/dev/null 2>&1
+rm -rf /data/dalvik-cache/*
+
+mount /cache >/dev/null 2>&1
+rm -rf /cache/*
+
 echo "- Done"
 exit 0
