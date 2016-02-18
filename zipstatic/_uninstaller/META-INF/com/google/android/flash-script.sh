@@ -118,7 +118,8 @@ if [ $IS64BIT ]; then
   restore_backup /system/lib64/libxposed_art.so        0    0 0644
 fi
 
-if [ "$API" -ge "22" ]; then
+if [ "$API" -le "22" ]; then
+find /system /vendor -type f -name '*.odex.xposed' 2>/dev/null | while read f; do mv "$f" "${f%.xposed}"; done
   find /system /vendor -type f -name '*.odex.gz.xposed' 2>/dev/null | while read f; do mv "$f" "${f%.xposed}"; done
 fi
 
