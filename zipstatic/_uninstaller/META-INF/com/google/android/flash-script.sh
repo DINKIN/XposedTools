@@ -120,6 +120,7 @@ fi
 
 if [ "$API" -le "22" ]; then
 find /system /vendor -type f -name '*.odex.xposed' 2>/dev/null | while read f; do mv "$f" "${f%.xposed}"; done
+find /system /vendor -type f -name '*.odex.xz.xposed' 2>/dev/null | while read f; do mv "$f" "${f%.xposed}"; done
   find /system /vendor -type f -name '*.odex.gz.xposed' 2>/dev/null | while read f; do mv "$f" "${f%.xposed}"; done
 fi
 
