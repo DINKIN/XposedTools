@@ -181,7 +181,7 @@ if [ $IS64BIT ]; then
   install_overwrite /system/lib64/libart-compiler.so      0    0 0644
   install_overwrite /system/lib64/libart-disassembler.so  0    0 0644
   install_overwrite /system/lib64/libsigchain.so          0    0 0644
-  install_overwrite /system/lib64/libxposed_art.so        0    0 0644
+  install_nobackup /system/lib64/libxposed_art.so         0    0 0644
 fi
 
 if [ "$API" -le "22" ]; then
